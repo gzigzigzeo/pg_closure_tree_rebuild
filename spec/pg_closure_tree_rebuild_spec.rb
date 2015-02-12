@@ -67,16 +67,20 @@ describe PgClosureTreeRebuild::Builder do
     end
   end
 
-  it '#rebuild' do
-    expect(db).to(
-      receive(:copy_into)
-        .with(
-          :table_hierarchies,
-          columns: [:ancestor_id, :descendant_id, :generations],
-          format: :binary,
-          data: anything
-        )
-    )
-    subject.rebuild(db)
+  context '#rebuild' do
+    let(:pgcopy) { %(PGCOPY\n\xFF\r\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004) }
+
+    it 'succeeds' do
+      expect(db).to(
+        receive(:copy_into)
+          .with(
+            :table_hierarchies,
+            columns: [:ancestor_id, :descendant_id, :generations],
+            format: :binary,
+            data: ->(v) { v[0..32] == pgcopy }
+          )
+      )
+      subject.rebuild(db)
+    end
   end
 end
