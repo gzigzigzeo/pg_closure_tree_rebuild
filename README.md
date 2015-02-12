@@ -22,9 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-      $ bundle exec rake closure_tree:rebuild DATABASE_URL=postgres://localhost/tags TABLE=tags HIERARCHIES=tag_hierarchies PARENT_ID=parent_id ID=id
+    $ bundle exec rake closure_tree:rebuild DATABASE_URL=postgres://localhost/tags TABLE=tags HIERARCHIES=tag_hierarchies PARENT_ID=parent_id ID=id
 
 You can bypass all params except database URL and table name.
+
+Rebuilding hierarchy for 1162537 records with 4 generations in average takes 2 mins 58 sec on my MacBook Pro i7 2.3 16GB vs hours using standard method.
 
 ## Contributing
 
