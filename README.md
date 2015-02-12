@@ -2,7 +2,7 @@
 
 Quick `#rebuild!` method implementation for [closure_tree](https://github.com/mceachen/closure_tree) on PostgreSQL.
 
-Say you have table with 1M+ hierarchical records and want to migrate to closure_tree. Initial rebuilding of hierarchies table with standard `#rebuild!` method will take dramatically long time. This library speeds up the process. It makes all the calculations using pure in-memory array and writes the result with `COPY FROM STDIN BINARY`.
+Say you have a table with 1M+ hierarchical records and you want to migrate it to closure_tree. Initial rebuild of hierarchies table using the standard #rebuild! method will take a dramatically long time. This library speeds up the process. It makes all the calculations using pure in-memory array and writes the result using COPY FROM STDIN BINARY.
 
 ## Installation
 
@@ -24,7 +24,7 @@ Or install it yourself as:
 
       $ bundle exec rake closure_tree:rebuild DATABASE_URL=postgres://localhost/tags TABLE=tags HIERARCHIES=tag_hierarchies PARENT_ID=parent_id ID=id
 
-You can bypass all params except database url and table name.
+You can bypass all params except database URL and table name.
 
 ## Contributing
 
