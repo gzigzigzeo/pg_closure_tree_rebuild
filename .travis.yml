@@ -1,7 +1,6 @@
 language: ruby
 rvm:
-  - 2.1
-  - jruby-19mode
+  - 2.2
 cache: bundler
 sudo: false
 
