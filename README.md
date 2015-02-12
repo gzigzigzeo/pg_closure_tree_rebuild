@@ -26,7 +26,7 @@ Or install it yourself as:
 
 You can bypass all params except database URL and table name.
 
-Rebuilding hierarchy for 1162537 records with 4 generations in average takes 2 mins 58 sec on my MacBook Pro i7 2.3 16GB vs hours using standard method.
+Rebuilding hierarchy for 1162537 records with 4 generations in average takes 2 minutes 58 seconds on my MacBook Pro i7 2.3GHz, while the rebuilding with the standard method takes hours.
 
 ## Contributing
 
