@@ -85,6 +85,8 @@ module PgClosureTreeRebuild
     end
 
     def copy(db, io)
+      db[@hierarchies_table_name].truncate
+      db.run('SET client_min_messages TO warning;')
       db.copy_into(
         @hierarchies_table_name,
         columns: COLUMNS, format: :binary, data: io.read

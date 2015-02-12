@@ -71,6 +71,10 @@ describe PgClosureTreeRebuild::Builder do
     let(:pgcopy) { %(PGCOPY\n\xFF\r\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0004) }
 
     it 'succeeds' do
+      table = double
+      expect(table).to receive(:truncate)
+      expect(db).to receive(:[]).with(:table_hierarchies).and_return(table)
+      expect(db).to receive(:run).with(/SET client_min_messages/)
       expect(db).to(
         receive(:copy_into)
           .with(
