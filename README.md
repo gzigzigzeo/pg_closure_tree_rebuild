@@ -24,7 +24,7 @@ Or install it yourself as:
 
       $ bundle exec rake closure_tree:rebuild DATABASE_URL=postgres://localhost/tags TABLE=tags HIERARCHIES=tag_hierarchies PARENT_ID=parent_id ID=id
 
-You can bypass all params except the table name.
+You can bypass all params except database url and table name.
 
 ## Contributing
 
