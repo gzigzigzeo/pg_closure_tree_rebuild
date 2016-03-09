@@ -4,6 +4,9 @@
 [![Code Climate](https://codeclimate.com/github/gzigzigzeo/pg_closure_tree_rebuild/badges/gpa.svg)](https://codeclimate.com/github/gzigzigzeo/pg_closure_tree_rebuild)
 [![Test Coverage](https://codeclimate.com/github/gzigzigzeo/pg_closure_tree_rebuild/badges/coverage.svg)](https://codeclimate.com/github/gzigzigzeo/pg_closure_tree_rebuild)
 
+<a href="https://evilmartians.com/?utm_source=sidekiq-grouping-gem">
+<img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54">
+</a>
 
 Quick `#rebuild!` method implementation for [closure_tree](https://github.com/mceachen/closure_tree) on PostgreSQL.
 
